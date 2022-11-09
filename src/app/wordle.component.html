@@ -1,0 +1,38 @@
+<div class="main">
+  <div class="try-container" *ngFor="let try of tries" #tryContainer>
+    <div class="letter-container" [attr.disabled]="valid == true ? true : null" *ngFor="let letter of try.letters"
+      [class.match]="letter.state === LetterState.FULL_MATCH"
+      [class.partial]="letter.state === LetterState.PARTIAL_MATCH" [class.wrong]="letter.state === LetterState.WRONG"
+      [class.has-text]="letter.text !== ''">
+      {{letter.text}}
+    </div>
+  </div>
+
+  <div class="msg" [class.show]="Msg !==''" [class.fade-out]="fadeOutMessage">
+    {{Msg}}
+  </div>
+
+  <div class="share-dialog-container" [class.show]="showShareDialogContainer">
+    <div class="share-dialog" [class.show]="showShareDialog">
+      <div class="fix_container">
+      <div class="title_stat">
+      <u>Partite: {{this.numberOfGames}} Sconfitte:{{this.numberOfLoss}}</u> 
+     </div>
+      <div style="text-align:center">
+        <apx-chart  [series]="chartOptions.series" 
+                    [chart]="chartOptions.chart" 
+                    [xaxis]="chartOptions.xaxis"
+                    [yaxis]="chartOptions.yaxis" 
+                    [title]="chartOptions.title" 
+                    [plotOptions]="chartOptions.plotOptions"
+                    [grid]="chartOptions.grid"> 
+        </apx-chart>
+      </div>
+      <div class="button_container">
+      <button (click)="handleClickShare()">Restart</button>
+    </div>
+    </div>
+    </div>
+    
+  </div>
+</div>

@@ -1,0 +1,55 @@
+.simple-keyboard {
+  margin-top: 50px;
+  background-color: transparent;
+ 
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  max-width: 500px;
+  position: fixed; 
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+  .hg-row:nth-child(2) {
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+  .hg-button {
+    background-color: #d3d6da;
+    //color: white;
+    font-weight: bold;
+    height: 58px;
+    margin: 0 6px 0 0;
+    border-radius: 4px;
+    .hg-button-bksp {
+      font-size: 50px;
+    }
+    
+ 
+  }
+
+  
+  
+  
+}
+
+
+
+.simple-keyboard.hg-layout-default .hg-button.Full {
+  background: #6aaa64;
+  color: white;
+}
+
+
+.simple-keyboard.hg-layout-default .hg-button.Partial {
+  background: #c9b458;
+  color: white;
+}
+
+
+.simple-keyboard.hg-layout-default .hg-button.Wrong {
+  background: #3a3a3c;
+  color: white;
+}
